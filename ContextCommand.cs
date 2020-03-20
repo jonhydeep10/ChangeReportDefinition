@@ -141,12 +141,6 @@ namespace ChangeReportDefinition
                     {
                         definition.Value = definition.Value.Replace("2016", "2008");
 
-                        var reportParameterNode = doc.GetElementsByTagName("ReportParameters")[0];
-                        if (reportParameterNode != null)
-                        {
-                            reportNode.RemoveChild(reportParameterNode);
-                        }
-
                         var reportParameterLayoutNode = doc.GetElementsByTagName("ReportParametersLayout")[0];
                         if (reportParameterLayoutNode != null)
                         {
