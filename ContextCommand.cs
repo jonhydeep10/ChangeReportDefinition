@@ -150,12 +150,12 @@ namespace ChangeReportDefinition
                         var autoNode = doc.GetElementsByTagName("AutoRefresh")[0];
 
                         var bodyNode = doc.GetElementsByTagName("Body")[0];
-                        var widthNode = doc.GetElementsByTagName("Width")[0];
+                        var widthNode = doc.GetElementsByTagName("ReportSection")[0].ChildNodes.Item(1);
                         var pageNode = doc.GetElementsByTagName("Page")[0];
 
-                        reportNode.InsertAfter(pageNode, autoNode);
-                        reportNode.InsertAfter(widthNode, autoNode);
-                        reportNode.InsertAfter(bodyNode, autoNode);
+                        reportNode.InsertBefore(bodyNode, autoNode);
+                        reportNode.InsertBefore(widthNode, autoNode);
+                        reportNode.InsertBefore(pageNode, autoNode);
 
                         var reportSectionsNode = doc.GetElementsByTagName("ReportSections")[0];
                         reportNode.RemoveChild(reportSectionsNode);
